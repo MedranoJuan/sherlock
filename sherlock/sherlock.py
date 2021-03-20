@@ -16,9 +16,9 @@ from argparse import ArgumentParser, RawDescriptionHelpFormatter
 from time import monotonic
 
 import requests
-
 from requests_futures.sessions import FuturesSession
 from torrequest import TorRequest
+
 from result import QueryStatus
 from result import QueryResult
 from notify import QueryNotifyPrint
@@ -170,7 +170,6 @@ def sherlock(username, site_data, query_notify,
     else:
         # Normal requests
         underlying_session = requests.session()
-        underlying_request = requests.Request()
 
     # Limit number of workers to 20.
     # This is probably vastly overkill.
